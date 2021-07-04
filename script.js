@@ -12,24 +12,30 @@ let paddleX = 150;
 let ballX = 150;
 let ballY = 150;
 let randomGame = [-4,-3,-2,2,3,4]
-function randomG(array){
-    return array[Math.floor(Math.random() * array.length)]
-}
+
 let ballDX = randomG(randomGame);
 let ballDY = randomG(randomGame);
 
 
+
+function randomG(array){
+    return array[Math.floor(Math.random() * array.length)]
+}
+
+
+
 const gameWrapper = document.getElementById('game');
 const score = document.createElement('div');
-score.className = 'score';
+ score.className = 'score';
 score.textContent = '0';
-gameWrapper.appendChild(score);
+document.createElement('div').appendChild(score);
+
 
 let countScore = 0;
 
 function updateDisplay(){
     score.textContent = countScore;
-};+
+};
 
 function drawGameCanvas(){
     canvas = document.getElementById('gameBoard');
@@ -102,6 +108,7 @@ function gameOver(){
         ballDY = randomG(randomGame);
     }
 }
+
 function keyInput(e) {
     switch (e.keyCode) {
         case 37:
